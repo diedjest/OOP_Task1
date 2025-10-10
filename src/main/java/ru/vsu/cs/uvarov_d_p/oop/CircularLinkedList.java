@@ -8,13 +8,13 @@ public class CircularLinkedList<T> implements Iterable<T> {
     private Node<T> head = null;
     private int count = 0;
 
-    private void checkEmpty() throws SimpleLinkedListException {
+    public void checkEmpty() throws SimpleLinkedListException {
         if (isEmpty()) {
             throw new SimpleLinkedListException("List is empty");
         }
     }
 
-    private Node<T> getTail() {
+    public Node<T> getTail() {
         if (head == null) return null;
         return head.prev;
     }
@@ -29,7 +29,7 @@ public class CircularLinkedList<T> implements Iterable<T> {
         return getTail().value;
     }
 
-    private Node<T> getItem(int index) throws SimpleLinkedListException {
+    public Node<T> getItem(int index) throws SimpleLinkedListException {
         if (index < 0 || index >= count) {
             throw new SimpleLinkedListException("Incorrect index");
         }
