@@ -4,7 +4,10 @@ import org.junit.Test;
 import ru.vsu.cs.uvarov_d_p.oop.linked_list.DoublyLinkedList;
 import ru.vsu.cs.uvarov_d_p.oop.linked_list.SimpleLinkedListException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class DoublyLinkedListTest {
 
@@ -22,8 +25,8 @@ public class DoublyLinkedListTest {
         list.addFirst(2);
 
         assertEquals(2, list.size());
-        assertEquals(2, (long) list.getFirst());
-        assertEquals(1, (long) list.getLast());
+        assertEquals(2, (int) list.getFirst());
+        assertEquals(1, (int) list.getLast());
     }
 
     @Test
@@ -33,8 +36,8 @@ public class DoublyLinkedListTest {
         list.addLast(2);
 
         assertEquals(2, list.size());
-        assertEquals(1, (long) list.getFirst());
-        assertEquals(2, (long) list.getLast());
+        assertEquals(1, (int) list.getFirst());
+        assertEquals(2, (int) list.getLast());
     }
 
     @Test
@@ -45,9 +48,9 @@ public class DoublyLinkedListTest {
         list.insert(1, 2);
 
         assertEquals(3, list.size());
-        assertEquals(1, (long) list.get(0));
-        assertEquals(2, (long) list.get(1));
-        assertEquals(3, (long) list.get(2));
+        assertEquals(1, (int) list.get(0));
+        assertEquals(2, (int) list.get(1));
+        assertEquals(3, (int) list.get(2));
     }
 
     @Test
@@ -57,9 +60,9 @@ public class DoublyLinkedListTest {
         list.addLast(2);
         list.addLast(3);
 
-        assertEquals(1, (long) list.removeFirst());
+        assertEquals(1, (int) list.removeFirst());
         assertEquals(2, list.size());
-        assertEquals(2, (long) list.getFirst());
+        assertEquals(2, (int) list.getFirst());
     }
 
     @Test
@@ -69,9 +72,9 @@ public class DoublyLinkedListTest {
         list.addLast(2);
         list.addLast(3);
 
-        assertEquals(3, (long) list.removeLast());
+        assertEquals(3, (int) list.removeLast());
         assertEquals(2, list.size());
-        assertEquals(2, (long) list.getLast());
+        assertEquals(2, (int) list.getLast());
     }
 
     @Test
@@ -81,10 +84,10 @@ public class DoublyLinkedListTest {
         list.addLast(2);
         list.addLast(3);
 
-        assertEquals(2, (long) list.remove(1));
+        assertEquals(2, (int) list.remove(1));
         assertEquals(2, list.size());
-        assertEquals(1, (long) list.get(0));
-        assertEquals(3, (long) list.get(1));
+        assertEquals(1, (int) list.get(0));
+        assertEquals(3, (int) list.get(1));
     }
 
     @Test
@@ -94,9 +97,9 @@ public class DoublyLinkedListTest {
         list.addLast(20);
         list.addLast(30);
 
-        assertEquals(10, (long) list.get(0));
-        assertEquals(20, (long) list.get(1));
-        assertEquals(30, (long) list.get(2));
+        assertEquals(10, (int) list.get(0));
+        assertEquals(20, (int) list.get(1));
+        assertEquals(30, (int) list.get(2));
     }
 
     @Test
@@ -168,12 +171,12 @@ public class DoublyLinkedListTest {
         list.addFirst(42);
 
         assertEquals(1, list.size());
-        assertEquals(42, (long) list.getFirst());
-        assertEquals(42, (long) list.getLast());
-        assertEquals(42, (long) list.get(0));
+        assertEquals(42, (int) list.getFirst());
+        assertEquals(42, (int) list.getLast());
+        assertEquals(42, (int) list.get(0));
         assertTrue(list.contains(42));
 
-        assertEquals(42, (long) list.removeFirst());
+        assertEquals(42, (int) list.removeFirst());
         assertTrue(list.isEmpty());
     }
 
@@ -186,14 +189,14 @@ public class DoublyLinkedListTest {
         }
 
         assertEquals(5, list.size());
-        assertEquals(0, (long) list.getFirst());
-        assertEquals(4, (long) list.getLast());
+        assertEquals(0, (int) list.getFirst());
+        assertEquals(4, (int) list.getLast());
 
-        assertEquals(2, (long) list.remove(2));
+        assertEquals(2, (int) list.remove(2));
         assertEquals(4, list.size());
 
         list.addFirst(-1);
-        assertEquals(-1, (long) list.getFirst());
+        assertEquals(-1, (int) list.getFirst());
 
         list.clear();
         assertTrue(list.isEmpty());
