@@ -5,7 +5,10 @@ import ru.vsu.cs.uvarov_d_p.oop.linked_list.CircularLinkedList;
 import ru.vsu.cs.uvarov_d_p.oop.linked_list.Node;
 import ru.vsu.cs.uvarov_d_p.oop.linked_list.SimpleLinkedListException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class CircularLinkedListTest {
 
@@ -236,3 +239,4 @@ public class CircularLinkedListTest {
         assertTrue(list.isEmpty());
     }
 }
+
